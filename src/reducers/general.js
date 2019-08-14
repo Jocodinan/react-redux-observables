@@ -2,7 +2,8 @@ import { fromJS } from 'immutable';
 
 export function generalStates(state = fromJS({
 	isLoading: false,
-	data: {}
+	searchValue: '',
+	data: []
 }), action) {
 	switch (action.type) {
 		case 'GET_USERS':
@@ -12,6 +13,8 @@ export function generalStates(state = fromJS({
 				map.set('data', fromJS(action.data))
 					.set('isLoading', false)
 			})
+		case 'CHANGE_SEARCH_VALUE':
+			return state.set('searchValue', action.value);
 		default:
 			return state;
 	}

@@ -10,3 +10,10 @@ export function usersReceived(data){
 		data
 	}
 }
+
+export function changeSearchValue(value){
+	return {
+		type: 'CHANGE_SEARCH_VALUE',
+		value
+	}
+}
